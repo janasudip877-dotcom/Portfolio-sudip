@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudip Jana | Cyber Defense Operations</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- 1. FIRST LOAD: Full-screen binary data flow and hacking sequence overlay -->
+    <div id="hacker-overlay" class="intro-overlay">
+        <!-- Background binary rain canvas -->
+        <canvas id="binaryCanvas"></canvas>
+        
+        <div class="terminal-loader" style="position: relative; z-index: 10;">
+            <p class="error-msg">>>> ALERT: UNAUTHORIZED DATA BREACH DETECTED...</p>
+            <p class="blink">[ INJECTING EXPLOIT: PAYLOAD_OSI_v2.SH ]</p>
+            <p class="success-msg">[+] ACCESS GRANTED TO SYSTEM_MATRIX...</p>
+            <div class="progress-bar"><div class="progress-fill"></div></div>
+        </div>
+    </div>
+
+    <!-- 2. SECOND LOAD: Surprise welcome message screen -->
+    <div id="welcome-overlay" class="intro-overlay hidden">
+        <div class="welcome-box">
+            <h2>Welcome to my Portfolio</h2>
+            <p>System Secured. Identity Verified.</p>
+            <button onclick="bootSystem()" class="boot-btn">ENTER WORKSPACE</button>
+        </div>
+    </div>
+
+    <!-- 3. MAIN DASHBOARD SCREEN (Core Interface) -->
+    <div id="main-workspace" class="dashboard-wrapper hidden">
+        
+        <!-- Live cyber attack logs and defense metrics panel -->
+        <aside class="defense-metrics-sidebar">
+            <div class="widget">
+                <h4>[// LIVE THREAT MAP]</h4>
+                <div class="attack-log" id="liveAttackLog">
+                    <p class="map-line">&gt; IP 104.22.4.110 -> Target: PORT_80 [BLOCKED]</p>
+                </div>
+            </div>
+            <div class="widget">
+                <h4>[// CORE TELEMETRY]</h4>
+                <div class="stat-box">INTEGRITY: <span class="sec-value">100%</span></div>
+                <div class="stat-box">PACKETS FILTERED: <span class="sec-value" id="packetCount">2450</span></div>
+            </div>
+        </aside>
+
+        <!-- Main profile workspace layout -->
+        <div class="portfolio-container">
+            <header class="profile-card">
+                <div class="photo-frame">
+                    <img src="./My_photo.jpeg" alt="Sudip Jana" class="user-photo">
+                    <div class="scan-laser"></div>
+                </div>
+                <div class="user-meta">
+                    <h1 class="name">SUDIP JANA</h1>
+                    <p class="title">BCA Student & Cybersecurity Enthusiast</p>
+                    <span class="badge">Node Status: Operational</span>
+                </div>
+            </header>
+
+            <!-- Main workspace control deck with explicit tab layouts -->
+            <nav class="navigation-panel">
+                <button class="menu-btn" onclick="executeCommand('about')">👤 Profile</button>
+                <button class="menu-btn" onclick="executeCommand('works')">💻 My Works</button>
+                <button class="menu-btn-lab" onclick="executeCommand('osilab')">🔒 Click to Launch OSI Lab</button>
+                <button class="menu-btn clear-btn" onclick="executeCommand('clear')">🧹 Clear All</button>
+            </nav>
+
+            <!-- Dynamic data sandboxed container workspace -->
+            <main id="dynamic-content-area" class="display-screen"></main>
+        </div>
+    </div>
+
+    <!-- Global core script bindings -->
+    <script src="js/main.js"></script>
+    <script src="js/osi-lab.js"></script>
+</body>
+</html>

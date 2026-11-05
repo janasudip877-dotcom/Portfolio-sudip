@@ -1,0 +1,72 @@
+:root {
+    --cyber-green: #00ff66;
+    --cyber-blue: #00e5ff;
+    --alert-red: #ff3366;
+    --dark-surface: #0a0a0a;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Courier New', Courier, monospace; }
+
+body { background-color: #020202; color: #fff; overflow-x: hidden; min-height: 100vh; }
+
+.intro-overlay {
+    position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+    background: #000; z-index: 9999; display: flex; justify-content: center; align-items: center; padding: 20px;
+}
+
+/* বাইনারি ক্যানভাস পজিশনিং */
+#binaryCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0.25;
+}
+
+.terminal-loader { width: 100%; max-width: 600px; }
+.error-msg { color: var(--alert-red); margin-bottom: 15px; font-weight: bold; }
+.success-msg { color: var(--cyber-green); margin-top: 15px; }
+
+.progress-bar { width: 100%; height: 6px; background: #222; margin-top: 20px; border-radius: 4px; overflow: hidden; }
+.progress-fill { width: 0%; height: 100%; background: var(--cyber-green); animation: loadBar 3s forwards; }
+
+@keyframes loadBar { 100% { width: 100%; } }
+
+.welcome-box { text-align: center; border: 1px solid var(--cyber-blue); padding: 40px; background: #070707; box-shadow: 0 0 25px rgba(0, 229, 255, 0.2); }
+.welcome-box h2 { font-size: 2.2rem; margin-bottom: 10px; color: var(--cyber-blue); }
+.boot-btn { margin-top: 25px; border: 1px solid var(--cyber-green); color: var(--cyber-green); padding: 12px 25px; background: transparent; cursor: pointer; font-weight: bold; }
+.boot-btn:hover { background: var(--cyber-green); color: #000; box-shadow: 0 0 15px var(--cyber-green); }
+
+/* কোর ড্যাশবোর্ড লেআউট এবং সাইডবার */
+.dashboard-wrapper { display: grid; grid-template-columns: 280px 1fr; padding: 30px; gap: 30px; }
+
+@media (max-width: 900px) { .dashboard-wrapper { grid-template-columns: 1fr; } }
+
+.defense-metrics-sidebar { background: rgba(12,12,12,0.9); border: 1px solid #1c1c1c; padding: 20px; border-radius: 8px; display: flex; flex-direction: column; gap: 20px; }
+.widget h4 { color: var(--cyber-green); font-size: 0.85rem; border-bottom: 1px solid #222; padding-bottom: 5px; margin-bottom: 10px; }
+.attack-log { height: 140px; overflow-y: hidden; font-size: 0.75rem; color: #777; }
+.stat-box { background: #111; padding: 10px; border: 1px solid #222; font-size: 0.85rem; margin-bottom: 8px; }
+.sec-value { color: var(--cyber-blue); font-weight: bold; }
+
+.portfolio-container { display: flex; flex-direction: column; gap: 20px; }
+.profile-card { background: #0e0e0e; border: 1px solid #1c1c1c; border-radius: 10px; padding: 25px; display: flex; align-items: center; gap: 25px; }
+.photo-frame { position: relative; width: 100px; height: 100px; border-radius: 50%; overflow: hidden; border: 2px solid var(--cyber-green); }
+.user-photo { width: 100%; height: 100%; object-fit: cover; }
+.scan-laser { position: absolute; top: 0; width: 100%; height: 3px; background: var(--cyber-green); animation: scan 2s infinite linear; }
+@keyframes scan { 0%, 100% { top: 0; } 50% { top: 100%; } }
+
+.navigation-panel { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; }
+button { background: #111; border: 1px solid #222; color: #fff; padding: 15px; border-radius: 6px; cursor: pointer; font-weight: bold; text-align: left; }
+button:hover { border-color: var(--cyber-green); box-shadow: 0 0 10px rgba(0,255,102,0.1); }
+.menu-btn-lab { border-color: rgba(0, 229, 255, 0.3); }
+.menu-btn-lab:hover { border-color: var(--cyber-blue); }
+
+.display-screen { background: #050505; border: 1px solid #161616; border-radius: 8px; padding: 25px; min-height: 430px; }
+.hidden { display: none !important; }
+
+/* ওএসআই স্টোরিটেলিং গ্রাফিক্স */
+.story-wrapper { display: flex; flex-direction: column; gap: 12px; margin-top: 20px; }
+.story-node { background: #111; border: 1px solid #222; padding: 12px 18px; border-radius: 6px; transition: all 0.3s; position: relative; opacity: 0.4; }
+.story-node.active-node { opacity: 1; border-color: var(--cyber-green); box-shadow: 0 0 10px rgba(0,255,102,0.15); transform: translateX(5px); }

@@ -1,0 +1,67 @@
+<!-- Scrollable Container: Keeps layout consistent with the dashboard theme -->
+<div class="works-scroll-container" style="max-height: 390px; overflow-y: auto; padding-right: 8px; animation: fadeIn 0.4s ease;">
+    
+    <div class="works-section-module">
+        <h3 style="color: var(--cyber-blue); margin-bottom: 20px;">[// ENVIRONMENT ARCHIVE: SYSTEM REPOSITORIES]</h3>
+        
+        <p style="color: #666; font-size: 0.85rem; margin-bottom: 20px; font-family: monospace;">
+            &gt; Reviewing active development repositories and core computational frameworks:
+        </p>
+
+        <div style="display:flex; flex-direction:column; gap:18px;">
+            
+            <!-- Repository Card 1: Your AI -->
+            <div style="background:#111; padding:18px; border:1px solid #222; border-radius:6px; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">
+                <h4 style="color:#fff; margin-bottom:6px; font-size: 1.05rem;">&gt; Your AI</h4>
+                <p style="font-size:0.85rem; color:#aaa; line-height:1.5; margin-bottom:12px;">
+                    A Flask-based Multi-Provider AI Assistant that generates detailed topic explanations using multiple AI providers through a clean, user-friendly web interface. Features automatic provider switching across Gemini, Groq, and OpenRouter with session memory support.
+                </p>
+                <div style="margin-bottom: 12px;">
+                    <span style="border: 1px solid var(--cyber-blue); padding: 2px 6px; font-size: 0.75rem; color: var(--cyber-blue); background: rgba(0,229,255,0.02); border-radius: 4px; margin-right: 5px;">Python / Flask</span>
+                    <span style="border: 1px solid var(--cyber-blue); padding: 2px 6px; font-size: 0.75rem; color: var(--cyber-blue); background: rgba(0,229,255,0.02); border-radius: 4px;">Gemini / Groq API</span>
+                </div>
+                <!-- Hard-coded verified repository url link -->
+                <a href="https://github.com" target="_blank" style="color:var(--cyber-green); font-size:0.85rem; text-decoration:none; font-weight:bold; letter-spacing: 0.5px;">
+                    [LINK] Connect to Your-Ai Repository →
+                </a>
+            </div>
+
+            <!-- Repository Card 2: Flow Pilot -->
+            <div style="background:#111; padding:18px; border:1px solid #222; border-radius:6px; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">
+                <h4 style="color:#fff; margin-bottom:6px; font-size: 1.05rem;">&gt; Flow Pilot</h4>
+                <p style="font-size:0.85rem; color:#aaa; line-height:1.5; margin-bottom:12px;">
+                    An interactive, modular frontend interface design framework built to map custom user operations smoothly. This architectural blueprint serves as a robust client-side platform designed for full-scale automation system tracking and scalability.
+                </p>
+                <div style="margin-bottom: 12px;">
+                    <span style="border: 1px solid var(--cyber-blue); padding: 2px 6px; font-size: 0.75rem; color: var(--cyber-blue); background: rgba(0,229,255,0.02); border-radius: 4px; margin-right: 5px;">HTML5 / CSS3</span>
+                    <span style="border: 1px solid var(--cyber-blue); padding: 2px 6px; font-size: 0.75rem; color: var(--cyber-blue); background: rgba(0,229,255,0.02); border-radius: 4px;">JavaScript (ES6)</span>
+                </div>
+                <!-- Hard-coded verified repository url link -->
+                <a href="https://github.com" target="_blank" style="color:var(--cyber-green); font-size:0.85rem; text-decoration:none; font-weight:bold; letter-spacing: 0.5px;">
+                    [LINK] Connect to Flow-pilot Repository →
+                </a>
+            </div>
+
+        </div>
+    </div>
+    
+</div>
+
+<style>
+/* Synchronized custom scrollbar for the works container */
+.works-scroll-container::-webkit-scrollbar {
+    width: 6px;
+}
+.works-scroll-container::-webkit-scrollbar-track {
+    background: #050505;
+    border-radius: 4px;
+}
+.works-scroll-container::-webkit-scrollbar-thumb {
+    background: #11381e;
+    border: 1px solid var(--cyber-green);
+    border-radius: 4px;
+}
+.works-scroll-container::-webkit-scrollbar-thumb:hover {
+    background: var(--cyber-green);
+}
+</style>

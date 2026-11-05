@@ -1,0 +1,109 @@
+<div class="3d-osi-core-container" style="animation: fadeIn 0.4s ease;">
+    
+    <!-- 1. One-click initialization banner -->
+    <div id="osi-clue-box" style="background: #0f0f0f; padding: 25px; border: 1px dashed var(--cyber-green); border-radius: 8px; text-align: center; margin-bottom: 25px;">
+        <p style="color: #888; font-size: 1rem; margin-bottom: 15px; font-family: monospace;">[SYSTEM MODULE LOCKED] Click below to initialize the unique interactive lab environment.</p>
+        <!-- Updated action label as requested -->
+        <button onclick="unlockOsiLab()" style="background: var(--cyber-green); color: #000; border: none; padding: 12px 30px; font-weight: bold; border-radius: 4px; cursor: pointer; font-size: 1rem; letter-spacing: 1px; box-shadow: 0 0 15px rgba(0, 255, 102, 0.2);">click for something different</button>
+    </div>
+
+    <!-- 2. Main 3D OSI Sandbox Container (Revealed on action click) -->
+    <div id="main-osi-sandbox" class="hidden">
+        <div style="display: flex; gap: 12px; margin-bottom: 30px;">
+            <!-- Translated placeholder to English standard -->
+            <input type="text" id="storyPayload" placeholder="Type a message and click SEND DATA (e.g., SECRET)..." style="flex:1; background:#000; border:1px solid #222; padding:14px; color:var(--cyber-green); outline:none; border-radius: 6px; font-size: 1rem; font-family: monospace;">
+            <button onclick="triggerStoryAnimation()" style="background:var(--cyber-blue); color:#000; border:none; padding:0 30px; font-weight:bold; border-radius:6px; cursor:pointer; font-size: 1rem; letter-spacing: 1px;">SEND DATA</button>
+        </div>
+
+        <!-- 3. 3D Animation Theater Sandbox Stage -->
+        <div class="animation-stage-3d" style="position: relative; min-height: 520px; background: #050505; border: 1px solid #111; border-radius: 12px; overflow: hidden; perspective: 1000px; padding: 20px;">
+            
+            <div class="lab-layout" style="display: grid; grid-template-columns: 1fr 100px 1fr; position: relative; height: 100%;">
+                
+                <!-- Transmitter Nodes Architecture Stack -->
+                <div class="osi-stack" id="senderStack" style="display: flex; flex-direction: column; justify-content: space-between; height: 420px; position: relative;">
+                    <!-- 3D graphical capsule vector widget -->
+                    <div class="packet-widget-3d" id="visualDataPacket" style="position: absolute; width: 40px; height: 30px; background: #fff; border-radius: 4px; left: 42%; top: 0; opacity: 0; display: flex; justify-content: center; align-items: center; font-size: 0.65rem; color: #000; font-weight: bold; box-shadow: 0 0 20px #fff; transition: all 0.7s cubic-bezier(0.25, 1, 0.5, 1); z-index: 99; transform-style: preserve-3d;">DATA</div>
+                    
+                    <div class="layer-node-3d" id="s-7">Layer 7: Application <span class="op-badge">[Data Created]</span></div>
+                    <div class="layer-node-3d" id="s-6">Layer 6: Presentation <span class="op-badge" id="s-6-badge">[Encryption]</span></div>
+                    <div class="layer-node-3d" id="s-5">Layer 5: Session <span class="op-badge">[Sync Channel]</span></div>
+                    <div class="layer-node-3d" id="s-4">Layer 4: Transport <span class="op-badge" id="s-4-badge">[Packetization]</span></div>
+                    <div class="layer-node-3d" id="s-3">Layer 3: Network <span class="op-badge" id="s-3-badge">[IP Addressing]</span></div>
+                    <div class="layer-node-3d" id="s-2">Layer 2: Data Link <span class="op-badge">[MAC Frame]</span></div>
+                    <div class="layer-node-3d" id="s-1">Layer 1: Physical <span class="op-badge">[Bits Stream]</span></div>
+                </div>
+
+                <!-- Central Link Routing Tunnel -->
+                <div class="center-channel" style="display: flex; justify-content: center; align-items: flex-end; padding-bottom: 25px;">
+                    <div class="cable-wire" style="width: 100%; height: 6px; background: #161616; position: relative; border-radius: 3px;">
+                        <div class="wire-pulse" id="cablePulse" style="position: absolute; width: 14px; height: 14px; background: #ff3366; border-radius: 50%; left: 0; top: -4px; opacity: 0; box-shadow: 0 0 15px #ff3366;"></div>
+                    </div>
+                </div>
+
+                <!-- Receiver Target Nodes Architecture Stack -->
+                <div class="osi-stack" id="receiverStack" style="display: flex; flex-direction: column; justify-content: space-between; height: 420px; position: relative;">
+                    <div class="layer-node-3d" id="r-7">Layer 7: Application <span class="op-badge" id="r-7-badge">[Delivered]</span></div>
+                    <div class="layer-node-3d" id="r-6">Layer 6: Presentation <span class="op-badge" id="r-6-badge">[Decryption]</span></div>
+                    <div class="layer-node-3d" id="r-5">Layer 5: Session <span class="op-badge">[Close Gate]</span></div>
+                    <div class="layer-node-3d" id="r-4">Layer 4: Transport <span class="op-badge" id="r-4-badge">[Reassembly]</span></div>
+                    <div class="layer-node-3d" id="r-3">Layer 3: Network <span class="op-badge">[IP Validate]</span></div>
+                    <div class="layer-node-3d" id="r-2">Layer 2: Data Link <span class="op-badge">[MAC Validate]</span></div>
+                    <div class="layer-node-3d" id="r-1">Layer 1: Physical <span class="op-badge">[Signal Capture]</span></div>
+                </div>
+
+            </div>
+            
+            <div id="visual-hud" style="margin-top: 25px; border-top: 1px solid #1a1a1a; padding-top: 15px; text-align: center; color: var(--cyber-blue); font-family: monospace; font-size: 0.95rem; font-weight: bold; letter-spacing: 1px;">📊 VISUAL HUD: SYSTEM STANDBY // INJECT PAYLOAD TO STREAM</div>
+        </div>
+    </div>
+</div>
+
+<style>
+.layer-node-3d {
+    background: #0f0f0f;
+    border: 1px solid #222;
+    padding: 12px 15px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    color: #444;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transform: rotateX(15deg);
+    transition: all 0.4s ease;
+    font-family: monospace;
+}
+.op-badge {
+    background: #000;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    color: #333;
+    border: 1px solid #111;
+    transition: all 0.3s;
+}
+.layer-node-3d.highlight-send {
+    border-color: var(--cyber-green);
+    color: var(--cyber-green);
+    background: rgba(0, 255, 102, 0.04);
+    box-shadow: 0 0 15px rgba(0, 255, 102, 0.1);
+    transform: rotateX(0deg) translateZ(15px);
+}
+.layer-node-3d.highlight-send .op-badge {
+    color: var(--cyber-green);
+    border-color: var(--cyber-green);
+}
+.layer-node-3d.highlight-recv {
+    border-color: var(--cyber-blue);
+    color: var(--cyber-blue);
+    background: rgba(0, 229, 255, 0.04);
+    box-shadow: 0 0 15px rgba(0, 229, 255, 0.1);
+    transform: rotateX(0deg) translateZ(15px);
+}
+.layer-node-3d.highlight-recv .op-badge {
+    color: var(--cyber-blue);
+    border-color: var(--cyber-blue);
+}
+</style>
